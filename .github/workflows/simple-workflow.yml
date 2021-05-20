@@ -1,9 +1,17 @@
 # This is a basic workflow to help you get started with Actions
 
+# 1. Here you give Simple Workflow Example as a name to the workflow using the name key.
+# 2. Using the on key, list all the events that will trigger the workflow. Current workflow is triggered only on push events i.e. whenever you push the changes to GitHub repository.
+# 3. Define jobs using the jobs key. build and time are the two jobs in this workflow.
+# 4. Inside a job, give it a name using the name key.
+# 5. Define the runners on which the current job will be executed on. The greet and the time jobs both run in different instance of ubuntu-latest runner.
+# 6. In previous section, you learned that commands are only way to instruct the runners what they need to do. These are defined in steps key using the run key. Optionally, you can use name key to give a name or a description to the step.
+# 7. The needs key specifies that the time job will run only after the build job completes. By default, the independent jobs run in parallel to each other.
+
 # 1
 name: Simple Workflow Example
 # 2
-on: [push]
+on: [ push ]
 
 # 3
 jobs:
@@ -20,8 +28,8 @@ jobs:
   time:
     name: Print date
     # 7
-    needs: 
-     - build
+    needs:
+      - build
     runs-on: ubuntu-latest
     steps:
-     - run: echo "It is $(date)"
+      - run: echo "It is $(date)"

@@ -1,0 +1,25 @@
+# This is a basic android workflow
+# Now, we'll define the jobs we need in the current workflow.
+# Runner's file system doesn't have the code yet! So, we need to check out
+# the code from the current repository and set up the Java environment in the runner.
+
+# Here we've used actions/checkout@v1 and actions/setup-java@v1 to checkout the current
+# GitHub repository and setup Java Development Kit in runner respectively.
+# The third step prints the contents of current working directory.
+
+name: CI Workflow
+on: [ push ]
+
+jobs:
+  build-and-test:
+    name: Build and run tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout current repository in ubuntu's file system
+        uses: actions/checkout@v1
+      - name: Setup JDK 1.8
+        uses: actions/setup-java@v1
+        with:
+          java-version: 1.8
+      - name: Print contents in current directory
+        run: ls -la
