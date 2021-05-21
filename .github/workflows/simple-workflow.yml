@@ -11,7 +11,10 @@
 # 1
 name: Simple Workflow Example
 # 2
-on: [ push ]
+on:
+  push:
+    paths:
+      - 'simple-workflow.yml'
 
 # 3
 jobs:
