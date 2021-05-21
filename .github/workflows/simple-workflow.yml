@@ -1,7 +1,7 @@
 # This is a basic workflow to help you get started with Actions
 
 # 1. Here you give Simple Workflow Example as a name to the workflow using the name key.
-# 2. Using the on key, list all the events that will trigger the workflow. Current workflow is triggered only on push events i.e. whenever you push the changes to GitHub repository.
+# 2. Using the on key, list all the events that will trigger the workflow. Current workflow is triggered only on push events i.e. whenever you push the changes to GitHub repository. Now it is triggering only when something in file changes.
 # 3. Define jobs using the jobs key. build and time are the two jobs in this workflow.
 # 4. Inside a job, give it a name using the name key.
 # 5. Define the runners on which the current job will be executed on. The greet and the time jobs both run in different instance of ubuntu-latest runner.
